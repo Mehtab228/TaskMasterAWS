@@ -1,3 +1,3 @@
 # TaskMaster
 
-![Image](./image1)
+![Image](./image1.png)
