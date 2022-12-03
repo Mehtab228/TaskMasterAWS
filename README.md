@@ -1,9 +1,9 @@
 # TaskMaster
 ### A way to track your tasks
 
-![Image](./image1.png)
-![Image](./image2.png)
-![Image](./image3.png)
+![Image](./app/screenshots_2./img.png)
+![Image]
+![Image]
 
 Changelog
 12/1 -> Adds three initial pages and links them together
