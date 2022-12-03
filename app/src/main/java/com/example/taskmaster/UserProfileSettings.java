@@ -2,6 +2,7 @@ package com.example.taskmaster;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -31,6 +32,8 @@ public class UserProfileSettings extends AppCompatActivity {
             //Nothing saves if you don't include it
             preferenceEditor.apply();
             Toast.makeText(this, "Username Saved!", Toast.LENGTH_SHORT).show();
+            Intent sendBacktoHome = new Intent(UserProfileSettings.this, MainActivity.class);
+            startActivity(sendBacktoHome);
         });
     }
 }
