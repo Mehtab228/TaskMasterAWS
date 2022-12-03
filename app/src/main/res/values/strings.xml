@@ -11,4 +11,6 @@
     <string name="all_my_tasks">All My Tasks</string>
     <string name="todo">TODO</string>
     <string name="todo1">TODO</string>
+    <string name="user_settings">User Settings</string>
+    <string name="please_enter_your_desired_username">Please enter your desired username:</string>
 </resources>

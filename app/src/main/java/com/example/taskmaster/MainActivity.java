@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         pathButtons();
+        setUpUserProfile();
     }
 
     public void pathButtons(){
@@ -34,6 +35,14 @@ public class MainActivity extends AppCompatActivity {
             startActivity(goToTaskFormActivity);
             //set up log
             Log.e("", "Error");
+        });
+    }
+
+    public void setUpUserProfile(){
+        Button mySettingsButton = MainActivity.this.findViewById(R.id.MainActivitySettingsButtonIntent);
+        mySettingsButton.setOnClickListener(v -> {
+            Intent goToUserProfileSettings = new Intent(MainActivity.this, UserProfileSettings.class);
+            startActivity(goToUserProfileSettings);
         });
     }
 }
