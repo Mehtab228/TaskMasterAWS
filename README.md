@@ -1,7 +1,7 @@
 # TaskMaster
 ### A way to track your tasks
 
-![Image](screenshots_2./img.png)
+![Image](screenshots/img.png)
 ![Image]
 ![Image]
 
