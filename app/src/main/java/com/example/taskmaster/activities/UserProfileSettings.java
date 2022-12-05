@@ -1,4 +1,4 @@
-package com.example.taskmaster;
+package com.example.taskmaster.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.preference.PreferenceManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.taskmaster.R;
 
 public class UserProfileSettings extends AppCompatActivity {
     SharedPreferences preferences;

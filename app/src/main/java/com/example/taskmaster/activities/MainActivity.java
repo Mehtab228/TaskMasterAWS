@@ -1,4 +1,4 @@
-package com.example.taskmaster;
+package com.example.taskmaster.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.taskmaster.R;
+
 public class MainActivity extends AppCompatActivity {
 public static final String TASK_TO_DO_TAG = "viewTask";
     @Override
@@ -18,7 +20,6 @@ public static final String TASK_TO_DO_TAG = "viewTask";
         setContentView(R.layout.activity_main);
         pathButtons();
         setUpUserProfile();
-        viewSpecificTaskInAllTasks();
     }
 
     @Override
@@ -62,25 +63,4 @@ public static final String TASK_TO_DO_TAG = "viewTask";
         ((TextView)findViewById(R.id.MainActivityTVDisplayName)).setText(String.format("Welcome Back %s%s", username.substring(0, 1).toUpperCase(), username.substring(1)));
     }
 
-    public void viewSpecificTaskInAllTasks(){
-        Button goToStoreButton = MainActivity.this.findViewById(R.id.MainActivityButtonGoToStore);
-        Button goToGym = MainActivity.this.findViewById(R.id.MainActivityButtonGym);
-        Button goDoLaundry = MainActivity.this.findViewById(R.id.MainActivityButtonDoLaundry);
-        Intent goToAllTasksIntent = new Intent(MainActivity.this, AllTasks.class);
-
-        goToStoreButton.setOnClickListener(v -> {
-            goToAllTasksIntent.putExtra(TASK_TO_DO_TAG, goToStoreButton.getText().toString());
-            startActivity(goToAllTasksIntent);
-        });
-
-        goToGym.setOnClickListener(v -> {
-            goToAllTasksIntent.putExtra(TASK_TO_DO_TAG, goToGym.getText().toString());
-            startActivity(goToAllTasksIntent);
-        });
-
-        goDoLaundry.setOnClickListener(v -> {
-            goToAllTasksIntent.putExtra(TASK_TO_DO_TAG, goDoLaundry.getText().toString());
-            startActivity(goToAllTasksIntent);
-        });
-    }
 }

@@ -4,24 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AllTasks">
+    tools:context=".activities.AllTasks">
 
-    <TextView
-        android:id="@+id/MainViewTVAllTasks"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="42dp"
-        android:text="@string/all_my_tasks"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/AllTasksTVTaskToDo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="124dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/AllTasksRecyclerView"
+        android:layout_width="409dp"
+        android:layout_height="747dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="62dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

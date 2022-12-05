@@ -17,4 +17,7 @@
     <string name="go_to_store">Go to Store</string>
     <string name="do_laundry">Do Laundry</string>
     <string name="gym">Gym</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="textview">TextView</string>
 </resources>
