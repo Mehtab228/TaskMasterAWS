@@ -1,9 +1,9 @@
 # TaskMaster
 ### A way to track your tasks
 
-![Image](screenshots/img.png)
 ![Image](screenshots/img_1.png)
 ![Image](screenshots/img_2.png)
+![Image](screenshots/img_3.png)
 
 Changelog
 
@@ -13,3 +13,7 @@ Changelog
 12/3 ->   
   - Adds a user settings page where the user can input their username and it will be displayed on the main page
   - Adds All task page where the user can click on a task on the main page and it will navigate to all tasks with information about the specific task
+
+12/4 ->
+  - Allows the user to view all of their hard coded tasks by navigating from their main page and clicking the All Tasks button
+  - Each fragment displays the state, title, and description of the task
