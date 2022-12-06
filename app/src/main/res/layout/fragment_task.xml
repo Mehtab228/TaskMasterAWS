@@ -3,47 +3,64 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragments.TaskFragment">
+    android:layout_width="410dp"
+    android:layout_height="150dp"
+    android:background="#30978E"
+    tools:context=".fragments.TaskFragment"
+    tools:visibility="visible">
 
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:id="@+id/TasksFragment"
-        android:layout_width="326dp"
-        android:layout_height="32dp"
+        android:layout_width="373dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="10dp"
+        android:background="#323030"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/TasksFragmentTVtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="7dp"
-        app:layout_constraintStart_toEndOf="@+id/TaskFragmentTVEnumState"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center_horizontal"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#AFADAD"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/TasksFragment"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="title" />
 
     <TextView
         android:id="@+id/TaskFragmentTVbody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="7dp"
-        app:layout_constraintStart_toEndOf="@+id/TasksFragmentTVtitle"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:lineSpacingExtra="8sp"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        android:textColor="#AFADAD"
+        app:layout_constraintStart_toStartOf="@+id/TasksFragment"
+        app:layout_constraintTop_toBottomOf="@+id/TaskFragmentTVEnumState"
+        tools:text="description" />
 
     <TextView
         android:id="@+id/TaskFragmentTVEnumState"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:textColor="#AFADAD"
         app:layout_constraintStart_toStartOf="@+id/TasksFragment"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/TasksFragment"
+        tools:text="hey" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

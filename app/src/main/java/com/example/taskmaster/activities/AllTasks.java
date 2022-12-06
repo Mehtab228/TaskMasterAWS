@@ -32,6 +32,8 @@ public class AllTasks extends AppCompatActivity {
         List<Tasks> taskList = new ArrayList<>();
         taskList.add(new Tasks("gym", "go to gym", Tasks.State.ASSIGNED));
         taskList.add(new Tasks("store", "go shopping", Tasks.State.COMPLETE));
+        taskList.add(new Tasks("nap", "take a nap", Tasks.State.NEW));
+        taskList.add(new Tasks("Code Challenge", "Practice using hashmaps", Tasks.State.IN_PROGRESS));
         RecyclerView taskRV = findViewById(R.id.AllTasksRecyclerView);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         taskRV.setLayoutManager(layoutManager);

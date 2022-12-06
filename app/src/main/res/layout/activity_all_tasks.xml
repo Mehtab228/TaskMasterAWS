@@ -9,7 +9,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/AllTasksRecyclerView"
         android:layout_width="409dp"
-        android:layout_height="747dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="62dp" />
+        android:layout_height="601dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="61dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
