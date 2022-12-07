@@ -78,4 +78,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MainViewETAddTaskDescription" />
 
+    <Spinner
+        android:id="@+id/AddTaskActivitySpinnerState"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="54dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MainActivityTVAddTasks" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

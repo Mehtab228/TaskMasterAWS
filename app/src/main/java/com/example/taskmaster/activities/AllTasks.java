@@ -32,14 +32,14 @@ public class AllTasks extends AppCompatActivity {
                         getApplicationContext(),
                         TaskMasterDatabase.class,
                         MainActivity.DATABASE_NAME)
-                .fallbackToDestructiveMigration() // If Room gets confused, it tosses your database; don't use this in production!
-                .allowMainThreadQueries()
-                .build();
+                        .fallbackToDestructiveMigration() // If Room gets confused, it tosses your database; don't use this in production!
+                        .allowMainThreadQueries()
+                        .build();
         setUpRecyclerView();
     }
 
     public void setUpRecyclerView(){
-        List<Tasks> taskList = new ArrayList<>();
+        List<Tasks> taskList = taskMasterDatabase.taskDao().findAll();
         taskList.add(new Tasks("gym", "go to gym", Tasks.State.ASSIGNED));
         taskList.add(new Tasks("store", "go shopping", Tasks.State.COMPLETE));
         taskList.add(new Tasks("nap", "take a nap", Tasks.State.NEW));
