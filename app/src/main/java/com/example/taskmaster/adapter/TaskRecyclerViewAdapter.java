@@ -39,6 +39,7 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskRecyclerVi
         TextView taskFragmentTVname = holder.itemView.findViewById(R.id.TasksFragmentTVtitle);
         TextView taskFragmentTVbody = holder.itemView.findViewById(R.id.TaskFragmentTVbody);
         TextView taskFragmentTVcontent = holder.itemView.findViewById(R.id.TaskFragmentTVEnumState);
+        Tasks tasks = taskList.get(position);
         String body = taskList.get(position).getBody();
         String title = taskList.get(position).getTitle();
         String state = taskList.get(position).getState().toString();

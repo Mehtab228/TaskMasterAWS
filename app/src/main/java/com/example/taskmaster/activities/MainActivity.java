@@ -1,6 +1,7 @@
 package com.example.taskmaster.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,13 +12,23 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.taskmaster.R;
+import com.example.taskmaster.database.TaskMasterDatabase;
 
 public class MainActivity extends AppCompatActivity {
-public static final String TASK_TO_DO_TAG = "viewTask";
+    TaskMasterDatabase taskMasterDatabase;
+    public static final String DATABASE_NAME = "task_master_db";
+    public static final String TASK_TO_DO_TAG = "viewTask";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        taskMasterDatabase = Room.databaseBuilder(
+                        getApplicationContext(),
+                        TaskMasterDatabase.class,
+                        DATABASE_NAME)
+                        .fallbackToDestructiveMigration() // If Room gets confused, it tosses your database; don't use this in production!
+                        .allowMainThreadQueries()
+                        .build();
         pathButtons();
         setUpUserProfile();
     }
