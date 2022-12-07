@@ -17,3 +17,7 @@ Changelog
 12/4 ->
   - Allows the user to view all of their hard coded tasks by navigating from their main page and clicking the All Tasks button
   - Each fragment displays the state, title, and description of the task
+
+12/5 ->
+  - connected Room db to application, you can now input a task and it will be saved to the db and display in all tasks
+  - Added additional styling
