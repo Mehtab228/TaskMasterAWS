@@ -48,15 +48,16 @@ public class AddTask extends AppCompatActivity {
                     Tasks.State.valueOf(spinner.getSelectedItem().toString())
             );
             taskMasterDatabase.taskDao().insertTask(newTask);
+            Toast.makeText(getApplicationContext(), "Task Submitted", Toast.LENGTH_LONG).show();
         });
-        addTaskButton.setOnClickListener(view -> Toast.makeText(getApplicationContext(), "Task Submitted", Toast.LENGTH_LONG)
-                .show());
+//        addTaskButton.setOnClickListener(view -> Toast.makeText(getApplicationContext(), "Task Submitted", Toast.LENGTH_LONG)
+//                .show());
     }
 
     public void setupTypeSpinner(){
         spinner.setAdapter(new ArrayAdapter<>(
-                spinner.getContext(),
-                android.R.layout.simple_spinner_item,
+                this,
+                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
                 Tasks.State.values()
         ));
     }

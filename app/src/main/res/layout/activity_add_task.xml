@@ -37,7 +37,7 @@
         android:hint="@string/task_title"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:textColorHint="#78909C"
+        android:textColorHint="#00838F"
         app:layout_constraintBottom_toTopOf="@+id/MainViewTVTaskDescription"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
@@ -63,7 +63,7 @@
         android:hint="@string/task_description"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:textColorHint="#78909C"
+        android:textColorHint="#00838F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="DuplicateSpeakableTextCheck" />
@@ -84,7 +84,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:layout_marginTop="54dp"
+        android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MainActivityTVAddTasks" />
+        app:layout_constraintTop_toBottomOf="@+id/MainActivityTVAddTasks"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

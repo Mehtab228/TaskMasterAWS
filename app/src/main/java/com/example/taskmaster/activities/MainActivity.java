@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         allTasks.setOnClickListener(v -> {
             Intent goToAllTasks = new Intent(MainActivity.this, AllTasks.class);
             startActivity(goToAllTasks);
-            Log.e("", "All Tasks Error");
         });
 
         // Get an element by its id
