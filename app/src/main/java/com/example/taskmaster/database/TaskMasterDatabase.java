@@ -11,4 +11,5 @@ import com.example.taskmaster.model.Tasks;
 @Database(entities = {Tasks.class}, version = 1)
 public abstract class TaskMasterDatabase extends RoomDatabase {
     public abstract TaskDao taskDao();
+
 }
