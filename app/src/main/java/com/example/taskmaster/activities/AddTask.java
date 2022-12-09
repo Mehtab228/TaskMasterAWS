@@ -1,10 +1,10 @@
 package com.example.taskmaster.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
 
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 
@@ -12,13 +12,14 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.amplifyframework.api.graphql.model.ModelMutation;
+import com.amplifyframework.core.Amplify;
+import com.amplifyframework.datastore.generated.model.StatusOfTask;
+import com.amplifyframework.datastore.generated.model.Task;
 import com.example.taskmaster.R;
-import com.example.taskmaster.database.TaskMasterDatabase;
-import com.example.taskmaster.model.Tasks;
-
 
 public class AddTask extends AppCompatActivity {
-    TaskMasterDatabase taskMasterDatabase;
+    public final static String TAG = "AddNewTask";
     Spinner spinner;
 
     @Override
@@ -28,37 +29,32 @@ public class AddTask extends AppCompatActivity {
 
         spinner = findViewById(R.id.AddTaskActivitySpinnerState);
 
-        taskMasterDatabase = Room.databaseBuilder(
-                        getApplicationContext(),
-                        TaskMasterDatabase.class,
-                        MainActivity.DATABASE_NAME)
-                .fallbackToDestructiveMigration() // If Room gets confused, it tosses your database; don't use this in production!
-                .allowMainThreadQueries()
-                .build();
         setupTypeSpinner();
         submitButton();
     }
 
-    public void submitButton(){
+    public void submitButton() {
         Button addTaskButton = AddTask.this.findViewById(R.id.MainViewButtonSubmitAddNewTask);
         addTaskButton.setOnClickListener(view -> {
-            Tasks newTask = new Tasks(
-                    ((EditText)findViewById(R.id.MainViewEditViewTaskTitle)).getText().toString(),
-                    ((EditText)findViewById(R.id.MainViewETAddTaskDescription)).getText().toString(),
-                    Tasks.State.valueOf(spinner.getSelectedItem().toString())
+            Task newTask = Task.builder()
+                    .name(((EditText)findViewById(R.id.MainViewEditViewTaskTitle)).getText().toString())
+                    .description(((EditText)findViewById(R.id.MainViewETAddTaskDescription)).getText().toString())
+                    .status(StatusOfTask.valueOf(spinner.getSelectedItem().toString()))
+                    .build();
+            Amplify.API.mutate(
+                    ModelMutation.create(newTask),
+                    success -> Log.i(TAG,"Add a new task.onCreate(), made a new task successfully"),
+                    failure -> Log.w(TAG,"Add a new task.onCreate(), made a new task successfully", failure.getCause())
             );
-            taskMasterDatabase.taskDao().insertTask(newTask);
             Toast.makeText(getApplicationContext(), "Task Submitted", Toast.LENGTH_LONG).show();
         });
-//        addTaskButton.setOnClickListener(view -> Toast.makeText(getApplicationContext(), "Task Submitted", Toast.LENGTH_LONG)
-//                .show());
     }
 
-    public void setupTypeSpinner(){
+    public void setupTypeSpinner() {
         spinner.setAdapter(new ArrayAdapter<>(
                 this,
                 androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
-                Tasks.State.values()
+                StatusOfTask.values()
         ));
     }
 

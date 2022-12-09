@@ -11,18 +11,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.amplifyframework.datastore.generated.model.Task;
 import com.example.taskmaster.R;
 import com.example.taskmaster.activities.AllTasks;
 import com.example.taskmaster.activities.TaskDetails;
-import com.example.taskmaster.model.Tasks;
+import com.google.android.play.core.tasks.Tasks;
 
 import java.util.List;
 
 public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskRecyclerViewAdapter.TaskViewHolder> {
-    List<Tasks> taskList;
+    List<Task> taskList;
     Context callingActivity;
 
-    public TaskRecyclerViewAdapter(List<Tasks> taskList, Context callingActivity) {
+    public TaskRecyclerViewAdapter(List<Task> taskList, Context callingActivity) {
         this.taskList = taskList;
         this.callingActivity = callingActivity;
     }
@@ -39,16 +40,16 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskRecyclerVi
         TextView taskFragmentTVname = holder.itemView.findViewById(R.id.TasksFragmentTVtitle);
         TextView taskFragmentTVbody = holder.itemView.findViewById(R.id.TaskFragmentTVbody);
         TextView taskFragmentTVcontent = holder.itemView.findViewById(R.id.TaskFragmentTVEnumState);
-        String body = taskList.get(position).getBody();
-        String title = taskList.get(position).getTitle();
-        String state = taskList.get(position).getState().toString();
-        taskFragmentTVname.setText(title);
+        String body = taskList.get(position).toString();
+        String name = taskList.get(position).toString();
+        String state = taskList.get(position).toString();
+        taskFragmentTVname.setText(name);
         taskFragmentTVbody.setText(body);
         taskFragmentTVcontent.setText(state);
         View taskItemView = holder.itemView;
         taskItemView.setOnClickListener(v -> {
             Intent goToDetailsIntent = new Intent(callingActivity, TaskDetails.class);
-            goToDetailsIntent.putExtra(AllTasks.TASK_TITLE_TAG, title);
+            goToDetailsIntent.putExtra(AllTasks.TASK_TITLE_TAG, name);
             goToDetailsIntent.putExtra(AllTasks.TASK_BODY_TAG, body);
             goToDetailsIntent.putExtra(AllTasks.TASK_STATE_TAG, state);
             callingActivity.startActivity(goToDetailsIntent);
