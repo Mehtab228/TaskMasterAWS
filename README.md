@@ -21,3 +21,7 @@ Changelog
 12/5 ->
   - connected Room db to application, you can now input a task and it will be saved to the db and display in all tasks
   - Added additional styling
+  
+  12/8 ->
+    -Switched databases from Room to Graph QL
+    -Implemented AWS amplify
