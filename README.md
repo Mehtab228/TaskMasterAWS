@@ -25,3 +25,7 @@ Changelog
   12/8 ->
     -Switched databases from Room to Graph QL
     -Implemented AWS amplify
+
+12/12 ->
+  -Added a new model: Team
+  -It can be assigned to each task upon creation
