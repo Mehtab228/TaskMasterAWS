@@ -7,9 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.amplifyframework.auth.options.AuthSignInOptions;
-import com.amplifyframework.auth.options.AuthSignUpOptions;
 import com.amplifyframework.core.Amplify;
 import com.example.taskmaster.R;
 

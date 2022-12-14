@@ -7,9 +7,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.amplifyframework.auth.AuthUser;
 import com.amplifyframework.auth.AuthUserAttributeKey;
 import com.amplifyframework.auth.options.AuthSignOutOptions;
 import com.amplifyframework.auth.options.AuthSignUpOptions;
@@ -19,6 +21,7 @@ import com.example.taskmaster.R;
 public class MainActivity extends AppCompatActivity {
     public static final String TASK_TO_DO_TAG = "viewTask";
     public static final String TAG = "logout";
+    public AuthUser authUser = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,19 +60,6 @@ public class MainActivity extends AppCompatActivity {
         greetingDisplay();
     }
 
-//    public void logOut(){
-//        Amplify.Auth.signOut(
-//
-//        () ->
-//        {
-//          Log.i(TAG, "Logout succeeded!");
-//        },
-//        failure ->
-//        {
-//          Log.i(TAG, "Logout failed: " + failure);
-//        }
-//      );
-//    }
 
     public void pathButtons(){
         Button allTasks = MainActivity.this.findViewById(R.id.MainViewButtonAllTasks);
@@ -88,6 +78,21 @@ public class MainActivity extends AppCompatActivity {
             Intent goToSignUp = new Intent(this, SignupActivity.class);
             startActivity(goToSignUp);
         });
+
+        // get current authenticted user
+        // if user is null -> show signUp button, hide signIn button
+        if (authUser == null){
+            // not signed in: see sign up sign in hide logout
+            signIn.setVisibility(View.VISIBLE);
+            signUp.setVisibility(View.VISIBLE);
+        } else {
+            String username = authUser.getUsername();
+            Log.i(TAG, "Username is: " + username);
+            // signed in. hide sign up and sign in and show logout
+            signIn.setVisibility(View.INVISIBLE);
+            signUp.setVisibility(View.INVISIBLE);
+
+        }
 
         // Get an element by its id
         Button addTaskBttn = MainActivity.this.findViewById(R.id.MainViewButtonAddTask);

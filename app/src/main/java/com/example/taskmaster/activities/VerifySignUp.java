@@ -35,7 +35,7 @@ public class VerifySignUp extends AppCompatActivity {
                     verificationCode,
                     success -> {
                         Log.i(TAG, "Verification succeeded: " + success);
-                        Intent goToSignInActivity = new Intent(this, SigninActivity.class);
+                        Intent goToSignInActivity = new Intent(this, MainActivity.class);
                         goToSignInActivity.putExtra(SignupActivity.SIGNUP_EMAIL_TAG, userEmail);
                         startActivity(goToSignInActivity);
                     },
