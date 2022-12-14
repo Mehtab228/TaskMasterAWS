@@ -14,6 +14,27 @@
         android:theme="@style/Theme.TaskMaster"
         tools:targetApi="31">
         <activity
+            android:name=".activities.SigninActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activities.VerifySignUp"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activities.SignupActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activities.UserProfileSettings"
             android:exported="false">
             <meta-data

@@ -40,30 +40,6 @@ public class AddTask extends AppCompatActivity {
         spinner = findViewById(R.id.AddTaskActivitySpinnerState);
         teamSpinner = findViewById(R.id.AddTaskSpinnerTeams);
         teamFuture = new CompletableFuture<>();
-//        Team newTeam1 = Team.builder()
-//                        .name("Joe")
-//                        .build();
-//        Team newTeam2 = Team.builder()
-//                .name("Ben")
-//                .build();
-//        Team newTeam3 = Team.builder()
-//                .name("Max")
-//                .build();
-//        Amplify.API.mutate(
-//                ModelMutation.create(newTeam1),
-//                success -> {},
-//                failure -> {}
-//        );
-//        Amplify.API.mutate(
-//                ModelMutation.create(newTeam2),
-//                success -> {},
-//                failure -> {}
-//        );
-//        Amplify.API.mutate(
-//                ModelMutation.create(newTeam3),
-//                success -> {},
-//                failure -> {}
-//        );
         setupTypeSpinner();
         submitButton();
 

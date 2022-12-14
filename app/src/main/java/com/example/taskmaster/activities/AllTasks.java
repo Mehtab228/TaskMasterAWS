@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -43,8 +45,10 @@ public class AllTasks extends AppCompatActivity {
                 ModelQuery.list(Task.class),
                 success -> {
                     Log.i(TAG, "Read tags successfully");
+                    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+                    String teamName = preferences.getString(UserProfileSettings.SELECTED_TAG, "Please go to settings and select a team!");
                     for (Task databaseTask : success.getData()){
-                        taskList.add(databaseTask);
+                        if (databaseTask.getTeam().getName().equals(teamName)){taskList.add(databaseTask);}
                     }
                    runOnUiThread(() -> adapter.notifyDataSetChanged());
                 },

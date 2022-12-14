@@ -20,4 +20,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="textview">TextView</string>
+    <string name="enter_email">Enter Email:</string>
+    <string name="enter_password">Enter Password:</string>
+    <string name="sign_in">Sign In</string>
+    <string name="verify_your_account">Verify Your Account:</string>
+    <string name="submit">Submit</string>
+    <string name="enter_code">Enter Code</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="save">Save</string>
 </resources>

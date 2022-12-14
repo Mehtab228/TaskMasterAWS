@@ -10,10 +10,13 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.amplifyframework.auth.AuthUserAttributeKey;
+import com.amplifyframework.auth.options.AuthSignOutOptions;
+import com.amplifyframework.auth.options.AuthSignUpOptions;
+import com.amplifyframework.core.Amplify;
 import com.example.taskmaster.R;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String DATABASE_NAME = "task_master_db";
     public static final String TASK_TO_DO_TAG = "viewTask";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +24,30 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         pathButtons();
         setUpUserProfile();
+//        Amplify.Auth.signUp(
+//                "mehtab228",
+//                "potato228!",
+//                AuthSignUpOptions.builder()
+//                        .userAttribute(AuthUserAttributeKey.name(), "Mehtab")
+//                        .userAttribute(AuthUserAttributeKey.email(), "mehtabriar228@hotmail.com")
+//                        .build(),
+//                success -> Log.i(TASK_TO_DO_TAG, "signup success"),
+//                failure -> Log.w(TASK_TO_DO_TAG, "failure to signin")
+//        );
+//
+//        Amplify.Auth.confirmSignUp(
+//                "mehtab228",
+//                "434739",
+//                success -> Log.i(TASK_TO_DO_TAG, "confirmed signup"),
+//                failure -> Log.w(TASK_TO_DO_TAG, "failed to confirm signup")
+//        );
+//
+//        Amplify.Auth.signIn(
+//                "mehtab228",
+//                "potato228!",
+//                success -> Log.i(TASK_TO_DO_TAG, "confirmed signin"),
+//                failure -> Log.w(TASK_TO_DO_TAG, "failed to signin")
+//        );
     }
 
     @Override
@@ -34,6 +61,17 @@ public class MainActivity extends AppCompatActivity {
         allTasks.setOnClickListener(v -> {
             Intent goToAllTasks = new Intent(MainActivity.this, AllTasks.class);
             startActivity(goToAllTasks);
+        });
+
+        Button signIn = MainActivity.this.findViewById(R.id.MainActivityButtonSignIn);
+        signIn.setOnClickListener(view ->{
+            Intent goToSignIn = new Intent(this, SigninActivity.class);
+            startActivity(goToSignIn);
+        });
+        Button signUp = MainActivity.this.findViewById(R.id.MainActivityButtonSignUp);
+        signUp.setOnClickListener(view ->{
+            Intent goToSignUp = new Intent(this, SignupActivity.class);
+            startActivity(goToSignUp);
         });
 
         // Get an element by its id
