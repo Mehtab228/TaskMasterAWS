@@ -29,3 +29,8 @@ Changelog
 12/12 ->
   -Added a new model: Team
   -It can be assigned to each task upon creation
+  
+  12/13 ->
+  -Added login functionality
+  -Added signup functionality 
+  -Added logout functionality
