@@ -18,6 +18,7 @@ import com.example.taskmaster.R;
 
 public class MainActivity extends AppCompatActivity {
     public static final String TASK_TO_DO_TAG = "viewTask";
+    public static final String TAG = "logout";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +56,20 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         greetingDisplay();
     }
+
+//    public void logOut(){
+//        Amplify.Auth.signOut(
+//
+//        () ->
+//        {
+//          Log.i(TAG, "Logout succeeded!");
+//        },
+//        failure ->
+//        {
+//          Log.i(TAG, "Logout failed: " + failure);
+//        }
+//      );
+//    }
 
     public void pathButtons(){
         Button allTasks = MainActivity.this.findViewById(R.id.MainViewButtonAllTasks);
