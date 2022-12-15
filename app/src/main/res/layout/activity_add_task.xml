@@ -92,9 +92,31 @@
     <Spinner
         android:id="@+id/AddTaskSpinnerTeams"
         android:layout_width="407dp"
-        android:layout_height="42dp"
+        android:layout_height="48dp"
         android:layout_marginTop="52dp"
+        android:contentDescription="@string/add_some_tasks"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/AddTaskActivitySpinnerState" />
+        app:layout_constraintTop_toTopOf="@+id/AddTaskActivitySpinnerState"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <Button
+        android:id="@+id/AddTaskButtonAddImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/add_an_image"
+        app:layout_constraintBottom_toTopOf="@+id/MainViewButtonSubmitAddNewTask"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/AddTaskImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="367dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,7 +30,14 @@ Changelog
   -Added a new model: Team
   -It can be assigned to each task upon creation
   
-  12/13 ->
+12/13 ->
   -Added login functionality
   -Added signup functionality 
   -Added logout functionality
+
+12/14 ->
+    -Added the ability to assign images to a task
+    -Implemented S3 bucket functionality 
+    -Image displays on Task Details page
+
+

@@ -10,12 +10,13 @@ type Team @model @auth(rules: [{allow: public}]){
 }
 
 type Task @model @auth(rules: [{allow: public}]){
-id: ID!
-name: String!
-description: String!
-teamId: ID! @index(name: "byTeam", sortKeyFields: ["name"])
-team: Team @belongsTo(fields: ["teamId"])
-status: StatusOfTask
+    id: ID!
+    name: String!
+    description: String!
+    teamId: ID! @index(name: "byTeam", sortKeyFields: ["name"])
+    team: Team @belongsTo(fields: ["teamId"])
+    status: StatusOfTask
+    s3ImageKey: String
 }
 
 enum StatusOfTask{
