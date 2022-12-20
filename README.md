@@ -39,5 +39,8 @@ Changelog
     -Added the ability to assign images to a task
     -Implemented S3 bucket functionality 
     -Image displays on Task Details page
+    
+12/20 ->
+   -Added location tracking
 
 
