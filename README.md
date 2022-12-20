@@ -43,4 +43,7 @@ Changelog
 12/20 ->
    -Added location tracking
 
+12/20 ->
+    -Added some analytics to main activity that tracks when users visit the main activity
+
 
