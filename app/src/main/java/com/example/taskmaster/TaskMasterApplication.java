@@ -19,6 +19,7 @@ public class TaskMasterApplication extends Application {
             Amplify.addPlugin(new AWSS3StoragePlugin());
             Amplify.addPlugin(new AWSCognitoAuthPlugin());
             Amplify.addPlugin(new AWSApiPlugin());
+            Amplify.addPlugin(new AWSPinpointAnalyticsPlugin());
             Amplify.configure(getApplicationContext());
         } catch (AmplifyException ae){
             Log.e(TAG, "Error Initializing Amplify: " + ae.getMessage(), ae);

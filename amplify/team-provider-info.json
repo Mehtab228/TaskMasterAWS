@@ -20,6 +20,9 @@
       },
       "storage": {
         "s3ef634489": {}
+      },
+      "analytics": {
+        "taskmasteraws": {}
       }
     }
   }

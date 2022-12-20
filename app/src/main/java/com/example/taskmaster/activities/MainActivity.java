@@ -3,7 +3,8 @@ package com.example.taskmaster.activities;
 import static com.amplifyframework.core.Amplify.Auth;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import com.amplifyframework.analytics.AnalyticsEvent;
+import com.amplifyframework.core.Amplify;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -24,6 +25,8 @@ import com.amplifyframework.auth.options.AuthSignUpOptions;
 import com.amplifyframework.core.Amplify;
 import com.example.taskmaster.R;
 
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
     public static final String TASK_TO_DO_TAG = "viewTask";
     public static final String TAG = "logout";
@@ -43,6 +46,14 @@ public class MainActivity extends AppCompatActivity {
                     authUser = null;
                 }
         );
+
+        AnalyticsEvent event = AnalyticsEvent.builder()
+                .name("Main Activity visited")
+                .addProperty("Tracking Activity", "Main Activity was opened")
+                .addProperty("Time", Long.toString(new Date().getTime()))
+                .build();
+
+        Amplify.Analytics.recordEvent(event);
 
         pathButtons();
         setUpUserProfile();
