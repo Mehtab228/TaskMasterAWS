@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         pathButtons();
         setUpUserProfile();
         signOutButton();
+        getLocation();
     }
 
     @Override
@@ -54,6 +55,14 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         greetingDisplay();
         signOutButton();
+    }
+
+    public void getLocation(){
+        Button location = MainActivity.this.findViewById(R.id.MainActivityLocationButton);
+        location.setOnClickListener(view ->{
+            Intent goToLocation = new Intent(this, Location.class);
+            startActivity(goToLocation);
+    });
     }
 
 
@@ -74,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
             Intent goToSignUp = new Intent(this, SignupActivity.class);
             startActivity(goToSignUp);
         });
+
         // Get an element by its id
         Button addTaskBttn = MainActivity.this.findViewById(R.id.MainViewButtonAddTask);
         //add an event listener to the button
